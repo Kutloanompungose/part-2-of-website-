@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pick n Pay | Home</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <img src="images/logo.jpg" alt="Pick n Pay Logo" />
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div>
+      <button class="mode-btn" id="lightMode"> Light Mode</button>
+      <button class="mode-btn" id="darkMode"> Dark Mode</button>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h1>Welcome to Pick n Pay</h1>
+      <p>Your one-stop shop for quality products at affordable prices.</p>
+      <img src="images/products.jpg" alt="Store" width="100%" style="max-height: 400px; object-fit: cover; border-radius: 10px;" />
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Pick n Pay. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const darkBtn = document.getElementById("darkMode");
+    const lightBtn = document.getElementById("lightMode");
+    darkBtn?.addEventListener("click", () => {
+      document.body.classList.add("dark-mode");
+      localStorage.setItem("theme", "dark");
+    });
+    lightBtn?.addEventListener("click", () => {
+      document.body.classList.remove("dark-mode");
+      localStorage.setItem("theme", "light");
+    });
+    window.addEventListener("DOMContentLoaded", () => {
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    });
+  </script>
+</body>
+</html>
+
+
